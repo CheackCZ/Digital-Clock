@@ -1,46 +1,60 @@
-// Digit control input
-byte D1 = 2;
-byte D2 = 3;
-byte D3 = 4;
-byte D4 = 5;
+  // Declarations
+  // Digit control input
+  byte D1 = 2;
+  byte D2 = 3;
+  byte D3 = 4;
+  byte D4 = 5;
 
-// Segment control input
-byte A = 6;
-byte B = 7;
-byte C = 8;
-byte D = 9;
-byte E = 10;
-byte F = 11;
-byte G = 12;
-byte DP = 13; // decimal point
+  // Segment control input
+  byte A = 6;
+  byte B = 7;
+  byte C = 8;
+  byte D = 9;
+  byte E = 10;
+  byte F = 11;
+  byte G = 12;
+  byte DP = 13; // decimal point
 
-// Define the input pins for the 7-segment display segments.
-const int segmentPins[] = {A, B, C, D, E, F, G, DP};
+  // Define the input pins for the 7-segment display segments.
+  const int segmentPins[] = {A, B, C, D, E, F, G, DP};
 
-// Define the input pins for the 7-segment display digits.
-const int digitPins[] = {D1, D2, D3, D4};
+  // Define the input pins for the 7-segment display digits.
+  const int digitPins[] = {D1, D2, D3, D4};
 
-// For common cathode
-uint8_t digitON = HIGH;
-uint8_t digitOFF = LOW;
+  // For common cathode
+  uint8_t digitON = HIGH;
+  uint8_t digitOFF = LOW;
 
-uint8_t segmentON = LOW;
-uint8_t segmentOFF = HIGH;
+  uint8_t segmentON = LOW;
+  uint8_t segmentOFF = HIGH;
 
-void setup() {
-    // Pin segments initialization.
-   for (int i = 0; i < 8; i++) {
-      pinMode(segmentPins[i], OUTPUT);
-   }
-   // Pin digits initialization
-   for (int i = 0; i < 4; i++) {
-      pinMode(digitPins[i], OUTPUT);
-      digitalWrite(digitPins[i], digitOFF);
-   }
-}
+  // Time input
+  String time = "10:52";
 
-void loop() {
-  One(D1);
+  // Default Methods
+  void setup() {
+      // Pin segments initialization.
+    for (int i = 0; i < 8; i++) {
+        pinMode(segmentPins[i], OUTPUT);
+    }
+    // Pin digits initialization
+    for (int i = 0; i < 4; i++) {
+        pinMode(digitPins[i], OUTPUT);
+        digitalWrite(digitPins[i], digitOFF);
+    }
+
+    // Initialize serial communication
+    Serial.begin(9600);
+    // Print the string to the serial monitor for control.
+    Serial.println("Time input: " + time);
+    // Trying to convert the string time to individual
+    ConvertString(time);
+  }
+
+  void loop() {
+    Error();
+
+  /*One(D1);
 
   Two(D2);
 
@@ -58,7 +72,7 @@ void loop() {
 
   Nine(D1);
 
-  loop();
+  loop();*/
 }
 
 // Method turning on all digit fields
@@ -88,6 +102,21 @@ void AllSegmentsUp() {
   }
   delay(1000);
 }
+
+
+// Method converting string to the numbers to view the time on the led display
+void ConvertString(String input) {
+  char numArray[6]; 
+  
+  // Convert the String to a character array
+  input.toCharArray(numArray, 6);
+  
+  for (int i = 0; i < input.length(); i++) {
+    Serial.print(numArray[i]);
+    Serial.print(" ");
+  }
+}
+
 
 // Number One showed on given pin with 1 second display delay
 void One(uint8_t pin) {
@@ -258,4 +287,69 @@ void Nine(uint8_t pin) {
 
   AllSegmentsDown();
   AllDigitsDown();
+}
+
+// Number Nine showed on given pin with 1 second display delay
+void Dot(uint8_t pin) {
+  digitalWrite(pin, digitON);
+
+  digitalWrite(A, segmentOFF);
+  digitalWrite(B, segmentOFF);
+  digitalWrite(C, segmentOFF);  
+  digitalWrite(D, segmentOFF);
+  digitalWrite(E, segmentOFF);
+  digitalWrite(F, segmentOFF);
+  digitalWrite(G, segmentOFF);
+  digitalWrite(DP, segmentON);
+  
+  delay(1000);
+
+  AllSegmentsDown();
+  AllDigitsDown();
+}
+
+// char E showed on given pin
+void E_char(uint8_t pin) {
+  digitalWrite(pin, digitON);
+
+  digitalWrite(A, segmentON);
+  digitalWrite(B, segmentOFF);
+  digitalWrite(C, segmentOFF);  
+  digitalWrite(D, segmentON);
+  digitalWrite(E, segmentON);
+  digitalWrite(F, segmentON);
+  digitalWrite(G, segmentON);
+  digitalWrite(DP, segmentOFF);
+
+  delay(1000);
+
+  AllSegmentsDown();
+  AllDigitsDown();
+}
+
+// char R showed on given pin
+void R_char(uint8_t pin) {
+  digitalWrite(pin, digitON);
+
+  digitalWrite(A, segmentON);
+  digitalWrite(B, segmentON);
+  digitalWrite(C, segmentON);  
+  digitalWrite(D, segmentOFF);
+  digitalWrite(E, segmentON);
+  digitalWrite(F, segmentON);
+  digitalWrite(G, segmentON);
+  digitalWrite(DP, segmentOFF);
+  
+  delay(1000);
+
+  AllSegmentsDown();
+  AllDigitsDown();
+}
+
+// ERR showed on the display to get user to know that something is wrong
+void Error() {
+  Dot(D1);     // Display "."
+  E_char(D2);  // Display "E"
+  R_char(D3);  // Display "R"
+  R_char(D4);  // Display "R"
 }
