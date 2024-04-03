@@ -241,8 +241,8 @@ void AllSegmentsUp() {
 
 
 // Number One showed on given pin with 1 second display delay
-void One(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void One() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentOFF);
   digitalWrite(B, segmentON);
@@ -253,15 +253,15 @@ void One(uint8_t pin) {
   digitalWrite(G, segmentOFF);
   digitalWrite(DP, segmentOFF);
 
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // Number Two showed on given pin with 1 second display delay
-void Two(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void Two() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentON);
   digitalWrite(B, segmentON);
@@ -272,15 +272,15 @@ void Two(uint8_t pin) {
   digitalWrite(G, segmentON);
   digitalWrite(DP, segmentOFF);
 
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // Number Three showed on given pin with 1 second display delay
-void Three(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void Three() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentON);
   digitalWrite(B, segmentON);
@@ -291,15 +291,15 @@ void Three(uint8_t pin) {
   digitalWrite(G, segmentON);
   digitalWrite(DP, segmentOFF);
 
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // Number Four showed on given pin with 1 second display delay
-void Four(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void Four() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentOFF);
   digitalWrite(B, segmentON);
@@ -310,15 +310,15 @@ void Four(uint8_t pin) {
   digitalWrite(G, segmentON);
   digitalWrite(DP, segmentOFF);
 
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // Number Five showed on given pin with 1 second display delay
-void Five(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void Five() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentON);
   digitalWrite(B, segmentOFF);
@@ -329,15 +329,15 @@ void Five(uint8_t pin) {
   digitalWrite(G, segmentON);
   digitalWrite(DP, segmentOFF);
 
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // Number Six showed on given pin with 1 second display delay
-void Six(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void Six() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentON);
   digitalWrite(B, segmentOFF);
@@ -348,15 +348,15 @@ void Six(uint8_t pin) {
   digitalWrite(G, segmentON);
   digitalWrite(DP, segmentOFF);
 
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // Number Seven showed on given pin with 1 second display delay
-void Seven(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void Seven() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentON);
   digitalWrite(B, segmentON);
@@ -367,15 +367,15 @@ void Seven(uint8_t pin) {
   digitalWrite(G, segmentOFF);
   digitalWrite(DP, segmentOFF);
 
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // Number Eight showed on given pin with 1 second display delay
-void Eight(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void Eight() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentON);
   digitalWrite(B, segmentON);
@@ -386,15 +386,15 @@ void Eight(uint8_t pin) {
   digitalWrite(G, segmentON);
   digitalWrite(DP, segmentOFF);
 
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // Number Nine showed on given pin with 1 second display delay
-void Nine(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void Nine() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentON);
   digitalWrite(B, segmentON);
@@ -405,15 +405,15 @@ void Nine(uint8_t pin) {
   digitalWrite(G, segmentON);
   digitalWrite(DP, segmentOFF);
 
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // Number Nine showed on given pin with 1 second display delay
-void Dot(uint8_t pin) {
-  digitalWrite(pin, digitON);
+void Dot() {
+  //digitalWrite(pin, digitON);
 
   digitalWrite(A, segmentOFF);
   digitalWrite(B, segmentOFF);
@@ -424,10 +424,10 @@ void Dot(uint8_t pin) {
   digitalWrite(G, segmentOFF);
   digitalWrite(DP, segmentON);
   
-  delay(1);
+  /*delay(1);
 
   AllSegmentsDown();
-  AllDigitsDown();
+  AllDigitsDown();*/
 }
 
 // char E showed on given pin
