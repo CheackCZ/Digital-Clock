@@ -34,10 +34,6 @@
   int hours = 0;
   int minutes = 0;
 
-  unsigned long previousMillis = 0;  // Variable to store the last time the LED was updated
-  const long interval = 60000;       // Interval (in milliseconds) at which to update the LED (1 minute)
-
-
 // Default Methods
 void setup() {
   // Pin segments initialization.
@@ -61,18 +57,10 @@ void setup() {
 }
 
 void loop() {
-  unsigned long currentMillis = millis();  // Get the current time
+  // Trying to convert the string time to individual ints
+  ConvertString(time);
 
-  // Check if it's time to update the LED
-  if (currentMillis - previousMillis >= interval) {
-    // Save the last time the LED was updated
-    previousMillis = currentMillis;
-
-    // Trying to convert the string time to individual ints
-    ConvertString(time);
-
-    Serial.println(FormatTime(hours, minutes));
-  }
+  Serial.println(FormatTime(hours, minutes));
 }
 
 // Method converting string to the numbers to view the time on the led display
