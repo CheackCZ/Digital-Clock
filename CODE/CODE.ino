@@ -12,7 +12,7 @@
 // Declarations
 
   /**
-  * @brief Pin declarations for digit control inputs.
+  * @brief Pin declarations for digit control inputs. 
   */
   byte D1 = 2;
   byte D2 = 3;
