@@ -1,0 +1,137 @@
+/* Fonts downloaded */
+@font-face {
+    font-family: 'Digital';
+    src: url('fonts/technology/Technology.ttf') format('truetype');
+}
+
+/* Body */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+
+    width: 100%;
+    height: 640px;
+
+    background: radial-gradient(ellipse at center, #202020, #000000);
+}
+    /* div with logo */
+    #logo {
+        display: flex;
+
+        align-items: center;
+        justify-content: left;
+        
+        width: 50%;
+        height: 100px;
+
+        margin-left: 14%;
+
+        cursor: pointer; 
+    }
+    /* Logo img */
+    #logo > img {
+        height: 50px;
+        width: 75px;
+    }
+    /* Paragraph with time inside logo*/
+    #time {
+        position: absolute;
+        
+        width: 65px;
+        height: 24px;
+
+        margin-top: 23px;
+        margin-left: 5px;
+
+        text-align: center;
+
+        color: #B91818;
+
+        font-size: 1.2em;
+        font-family: 'Digital', monospace;
+    }
+
+    /* Nav */
+    nav {
+        display: flex;
+
+        align-items: center;
+        justify-content: right;
+        
+        width: 50%;
+        height: 100px;
+
+        margin-right: 14%;
+
+        color: white;
+        font-family: Alata, "sans-serif";
+    }
+
+    /* ul */
+    ul {
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+
+        justify-content: right;
+        align-items: center;
+
+        gap: 30px;
+    }
+    /* li */
+    ul > li {
+        list-style: none;
+    
+        cursor: pointer;
+    }
+    ul > li:hover {
+        color: #B91818;
+    }
+    /* References = last ul item */
+    ul > #References {
+        padding: 10px 20px;
+        background-color: #B91818;
+    }
+    ul > #References:hover {
+        background-color: white;
+        color: #B91818;
+    }
+
+/* Main */
+    /* Billboard */
+    #billboard {
+        display: flex;
+        
+        width: 100%;
+
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+
+        position: absolute;
+
+        top: 225px;
+    }
+    #billboard > h1 {
+        font-family: Alata, "sans-serif";
+        font-size: 96px;
+
+        color: #B91818;
+    
+        margin: 0;
+    }
+    #billboard > h3 {
+        font-family: Alata, "sans-serif";
+        font-size: 32px;
+        color: #810000;
+            
+        margin: 0;
+    }

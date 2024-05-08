@@ -9,6 +9,14 @@
         <!-- Favicon (!Není červená ikona) -->
         <link rel="shortcut icon" href="icons/digital-clock-icon2.svg" type="image/x-icon"> 
 
+        <!-- Links to CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
         <!-- Title -->
         <title>Digitální Hodiny</title>
     </head>
@@ -17,8 +25,9 @@
         <!-- Header -->
         <header>
             <!-- div with the clock icon-->
-            <div>
-                <img src="icons/digital-clock-icon2.svg" alt="Clock-Image">
+            <div id="logo">
+                <img src="icons/digital-clock-icon2.png" alt="Clock-Image">
+                <p id="time">12:24</p>
             </div>
 
             <!-- Navigation menu -->
@@ -28,12 +37,12 @@
                     <li>MODEL</li>
                     <li>SCHÉMA</li>
                     <li>SOUČÁSTKY</li>
-                    <li>ODKAZY</li>
+                    <li id="References">ODKAZY</li>
                 </ul>
             </nav>
 
              <!-- Div with the title under navbar -->
-             <div>
+             <div id="billboard">
                 <h1>Digitální Hodiny</h1>
                 <h3>7-segmentové digitální led displej hodiny</h3>    
             </div>
