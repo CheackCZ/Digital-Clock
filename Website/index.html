@@ -20,6 +20,7 @@
         <!-- Title -->
         <title>Digitální Hodiny</title>
 
+        <!-- Three.js used for the 3D Model -->
         <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
         <script type="importmap">
             {
@@ -43,11 +44,11 @@
             <!-- Navigation menu -->
             <nav>
                 <ul>
-                    <li>DOMŮ</li>
-                    <li>MODEL</li>
-                    <li>SCHÉMA</li>
-                    <li>SOUČÁSTKY</li>
-                    <li id="references">ODKAZY</li>
+                    <li><a href="#logo">DOMŮ</a></li>
+                    <li><a href="#model-container">MODEL</a></li>
+                    <li><a href="#ec-container">SCHÉMA</a></li>
+                    <li><a href="#individual-parts-container">SOUČÁSTKY</a></li>
+                    <li id="references"><a href="#footer">ODKAZY</a></li>
                 </ul>
             </nav>
 
@@ -61,46 +62,110 @@
         <!-- Main -->
         <main>
             <!-- Section with 3D Model -->
-           <div id="model-container">
-                <h2>3D Model</h2>
-                <div id="canvas-container"></div>
-           </div>
+            <div id="model-container">
+                    <h2>3D Model</h2>
+                    <div id="canvas-container"></div>
+            </div>
 
-           <!-- Section with Scheme of the electrical circuit -->
-           <section class="Electrical-Circuit">
-            
-           </section>
+            <!-- Section with Scheme of the electrical circuit -->
+            <section id="ec-container">
+                <h2>Schéma Zapojení</h2>
 
-           <!-- Section with individual parts-->
-           <section class="Individual-Parts">
-            <!-- Article - Arduino UNO R3 -->
-                <article>
+                <!-- div with text and scheme -->
+                <div class="ec-insides-container">
+                    <!-- div with the text next to the scheme -->
+                    <div id="ec-text-container">
+                        <ul>
+                            <li>
+                                Elektrický obvod digitálních hodin s využitím platformy Arduino a 7-segmentového LED displeje. Arduino UNO R3 slouží jako řídící jednotka, 
+                                zatímco 7-segmentový LED displej zobrazuje aktuální čas ve 24-hodinovém formátu.
+                            </li>
+                            <br>
+                            <li>Popis Schématu:</li>
+                            <ol>
+                                <li>Arduino UNO R3</li>
+                                <li>7-Segmentový LED Displej</li>
+                                <li>Nepájivé kontaktní pole a Kabely male-male</li>
+                            </ol>
+                        </ul>
+                    </div>                
 
+                    <!-- div with the scheme image -->
+                    <div id="ec-scheme-container">
+                        <img src="img/Schéma-zapojení.png" alt="Scheme">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section with individual parts-->
+            <section id="individual-parts-container">
+
+                <h2>Součástky</h2>
+
+                <!-- Article - Arduino UNO R3 -->
+                <article class="part-container">
+                    <div class="part-description-container">
+                        <h3>Arduino UNO R3</h3>
+                        <p>Mikrokontrolér Arduino Uno R3 je klíčovým prvkem tohoto projektu, sloužícím jako základní deska a zároveň CPU. 
+                            Jeho úlohou je poskytnout prostředí pro programování, spojení veškerých součástek a efektivní řízení celého systému 
+                            digitálních hodin.</p>
+                    </div>
+                    <div class="part-img-container">
+                        <img src="img/arduino.jpg">
+                    </div>
                 </article>
 
                 <!-- Article - 7-Segment LED Display  -->
-                <article>
-
+                <article class="part-container">
+                    <div class="part-img-container">
+                        <img src="img/led-displej.jpg">
+                    </div>
+                    <div class="part-description-container">
+                        <h3>7-Segment LED Displej</h3>
+                        <p>Elektronická součástka použitá k zobrazení digitálních čísel a některých písmen. Skládá se ze 4 digitálních čísel, 
+                            12 pinů a jednotlivých segmentů ke každé číslici. Vše může být individuálně zapnuto/vypnuto.</p>
+                    </div>
                 </article>
 
                 <!-- Article - "Nepájivé pole"  -->
-                <article>
-
+                <article class="part-container">
+                    <div class="part-description-container">
+                        <h3>Nepájivé Pole</h3>
+                        <p>Používáme pro propojení LED displeje s arduinem pomocí kabelů. Používáme také pro práci s LED displejem pomocí arduina. 
+                            Využíváme vlastnosti nepájivého pole.</p>
+                    </div>
+                    <div class="part-img-container">
+                        <img src="img/nepajive-pole.jpg">
+                    </div>
                 </article>
 
                 <!-- Article - Male-Male Cables  -->
-                <article>
-
+                <article class="part-container">
+                    <div class="part-img-container">
+                        <img src="img/cables.jpg">
+                    </div>
+                    <div class="part-description-container">
+                        <h3>Kabely M-M</h3>
+                        <p>Používáme pro propojení jednotlivých součástek pomocí pinů.</p>
+                    </div>
                 </article>
             </section>
         </main>
 
         <!-- Footer -->
-        <footer>
+        <footer id="footer">
              <!-- div containing the Paragraph and Social References -->
-             <div>
-                <h3>...</h3>
-                <div>
+             <div id="left-part-container">
+                <h3>Time is <span>MONEY!</span></h3>
+                <div id="mail-container">
+                    <img src="icons/Mail.svg">
+                    <a href="mailto:ondra.faltin@gmail.com">ondra.faltin@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- div containing the Email and Conditions -->
+            <div id="right-part-container">
+                <div id="references-container">
                     <a href="https://github.com/CheackCZ/Digital-Clock" target="_blank">
                         <img src="icons/github-icon.png">
                     </a>
@@ -108,21 +173,15 @@
                         <img src="icons/linkedin-icon.png">
                     </a>
                 </div>
-            </div>
-
-            <!-- div containing the Email and Conditions -->
-            <div>
-                <div>
-                    <img src="icons/Mail.svg">
-                    <a href="mailto:ondra.faltin@gmail.com">ondra.faltin@gmail.com</a>
-                </div>
-                <div>
+                <div id="policies-container">
                     <a href="#Privacy_Policy">Privacy policy</a>
                     <a href="#Terms_of_Conditions">Terms of Conditions</a>
                 </div>
             </div>
         </footer>
 
+        <!-- JavaScript import -->
         <script type="module" src="js/model.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>

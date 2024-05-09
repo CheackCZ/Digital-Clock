@@ -15,6 +15,7 @@ header {
 
     background: radial-gradient(ellipse at center, #202020, #000000);
 }
+
     /* div with logo */
     #logo {
         display: flex;
@@ -41,15 +42,20 @@ header {
         width: 65px;
         height: 24px;
 
-        margin-top: 23px;
-        margin-left: 5px;
+        margin-top: 27px;
+        margin-left: 4px;
 
         text-align: center;
 
         color: #B91818;
 
-        font-size: 1.2em;
-        font-family: 'Digital', monospace;
+        font-size: 1.8em;
+        font-family: "Digital";
+    }
+    /* Digital font for the time in logo */
+    @font-face {
+        font-family: "Digital";
+        src: url("/fonts/digital-7/digital-7.ttf");
     }
 
     /* Nav */
@@ -69,7 +75,7 @@ header {
     }
 
     /* ul */
-    ul {
+    nav > ul {
         padding: 0;
         margin: 0;
 
@@ -80,24 +86,31 @@ header {
 
         gap: 30px;
     }
-    /* li */
-    ul > li {
+
+    /* li + a */
+    nav > ul > li {
         list-style: none;
     
         cursor: pointer;
     }
-    ul > li:hover {
-        color: #B91818;
+    nav > ul > li > a {
+        text-decoration: none;
+        color: white;
     }
+    nav > ul > li > a:hover {
+        color: #DA0000;
+    }
+
     /* References = last ul item */
     ul > #references {
         padding: 10px 20px;
-        background-color: #B91818;
+        background-color: #DA0000;
     }
     ul > #references:hover {
         background-color: white;
-        color: #B91818;
+        color: #DA0000;
     }
+
 
     /* Billboard */
     #billboard {
@@ -145,7 +158,7 @@ header {
     
         background-color: #EDEDED;
     }
-    #model-container > h2 {
+    h2 {
         color: #DA0000;
 
         font-size: 64px;
@@ -153,9 +166,199 @@ header {
 
         margin: 50px 0px 0px 0px;
     }
+    /* Canvas for the 3D Model */
     #canvas-container {
         display: flex;
 
         justify-content: center;
         align-items: center;
+    }
+
+
+    /* Section with scheme */
+    #ec-container {
+        display: flex;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        width: 100%;
+        height: 760px;
+    
+        background-color: #151515; 
+
+        color: white;
+    }
+    .ec-insides-container {
+        display: flex;
+
+        width: 72%;
+        height: 560px;
+
+        padding-left: 14%;
+        padding-right: 14%;
+    
+        align-items: center;
+
+        flex-direction: row;
+    }
+    #ec-text-container {
+        display: flex;
+
+        text-align: left;
+
+        align-items: center;
+
+        width: 50%;
+        height: 100%;
+
+        padding: 0px 50px 0px 20px;
+
+        float: left;
+
+        font-size: 18px;
+    }
+    #ec-text-container > ul,ol > li {
+        line-height: 1.5;
+    }
+    #ec-scheme-container {
+        display: flex;
+
+        width: 50%;
+        height: 80%;
+
+
+        float: right;
+    }
+
+
+    /* Section with individual parts */
+    #individual-parts-container {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        background-color: #EDEDED;
+
+        padding-bottom: 100px;
+    }
+    #individual-parts-container > h2 {
+        margin-bottom: -50px;
+    }
+    /* Individual parts div with text and img*/
+    .part-container {
+        width: 72%;
+        height: 450px;
+
+        margin-top: 100px;
+
+        display: flex;
+
+        align-items: center;
+
+        background: radial-gradient(circle, #1D1D1D, #000000);
+
+        color: white;
+    }
+    .part-description-container {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        width: 50%;
+        padding: 30px;
+    }
+    .part-description-container > p {
+        text-align: center;
+    }
+    /* h3 */
+    h3 {
+        font-size: 28px;
+        font-family: Alata, 'sans-serif';
+
+        margin: 0;
+    }
+    /* Img */
+    .part-img-container {
+        display: flex;
+        
+        width: 50%;
+        padding: 30px;
+    }
+    .part-img-container > img {
+        height: 400px;
+        width: 100%;
+
+        object-fit: cover;
+    }
+
+
+/* Footer */
+footer {
+    background-color: #B91818;
+
+    display: flex;
+}
+
+    /* references in footer */
+    footer a {
+        color: #000000;
+    }
+
+    /* left part of the footer */
+    #left-part-container {
+        display: flex;
+
+        justify-content: center;
+        align-items: left;
+
+        width: 36%;
+
+        flex-direction: column;
+
+        padding-left: 14%;
+        padding-bottom: 20px;
+    }
+    #left-part-container > h3 {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+    #left-part-container > h3 > span {
+        color: white;
+    }
+    #mail-container {
+        display: flex;
+
+        align-items: center;
+    }
+    #mail-container > img {
+        padding-right: 10px;
+    }
+
+    /* right part of the footer */
+    #right-part-container {
+        display: flex;
+
+        justify-content: center;
+        align-items: end;
+
+        width: 36%;
+
+        gap: 28px;
+
+        flex-direction: column;
+
+        padding-right: 14%;
+        padding-bottom: 16px;
+    }
+    #references-container > a {
+        text-decoration: none;
+    }
+    #policies-container > a {
+        margin-left: 12px;
     }
