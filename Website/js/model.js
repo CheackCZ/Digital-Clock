@@ -90,9 +90,9 @@ const canvasContainer = document.getElementById('canvas-container');
 canvasContainer.appendChild(renderer.domElement);
 
 function animate() {
-  requestAnimationFrame(animate);
-  controls.update();
-  renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
 }
 
 animate();

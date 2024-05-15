@@ -1,0 +1,173 @@
+@media screen and (min-width: 364px) and (max-width: 720px) {
+    footer {
+        flex-direction: column;
+
+        align-items: center;
+    }
+    #left-part-container {
+        margin: 0;
+        padding: 0;
+    }
+    #left-part-container > h3 {
+        padding: 20px 0px 20px 0px;
+        margin: 0;
+
+        text-align: center;
+    }
+    #right-part-container {
+        align-items: center;
+        
+        gap: 10px;
+
+        margin: 0;
+        padding: 20px 0 20px 0;
+    }
+    #mail-container {
+        justify-content: center;
+    }
+    #policies-container {
+        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 5px;
+    }
+}
+
+@media screen and (min-width: 364px) and (max-width: 925px) {
+    /* Hamburger menu */
+    /* Nav */
+     nav {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 72%;
+        margin-top: 100px;
+
+        z-index: 1;
+    }
+
+    /* ul */
+    nav > ul {
+        width: 90%;
+
+        flex-direction: column;
+
+        position: fixed;
+
+        top: 0;
+
+        margin-top: 100px;
+
+        gap: 0;
+    }
+
+    nav > ul > li {
+        width: 68%;
+        
+        padding: 10px 20px;
+
+        overflow: hidden;
+
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black (adjust alpha as needed) */
+    }
+    nav > ul > li > a {
+        display: flex;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    /* Hamburger menu */
+    .menu-button-container {
+        display: flex;
+    }
+
+    /* Billboard */
+    #billboard {
+        width: 72%;
+
+        padding-left: 14%;
+        padding-right: 14%;
+
+        flex-wrap: wrap;
+    }
+    #billboard > h1 {
+        font-size: 72px;
+        text-align: center;
+    }
+    #billboard > h3 {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    /* Section with electrical circuit scheme */
+    #ec-container {
+        height: 960px;
+    }
+    .ec-insides-container {
+        flex-direction: column;
+    }
+    #ec-text-container {
+        text-align: center;
+        width: 80%;
+
+        padding-top: 20px;
+    }
+    #ec-text-container > ul,ol {
+        padding: 0;
+    }
+    #ec-text-container > ul,ol > li {
+        list-style: none;
+        text-align: center;
+    }
+    #ec-scheme-container {
+        padding-top: 30px;
+
+        width: 100%;
+        height: 100%;
+    }
+    #ec-scheme-container > img {
+        width: 100%;
+
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 364px) and (max-width: 1019px) {
+    /* Section with individual parts */
+    .part-container {
+        height: 100%;
+
+        flex-direction: column;
+    }
+    .part-description-container {
+        width: 80%;
+        padding-bottom: 0;
+    }
+    #even-part > .part-description-container {
+        padding-bottom: 30px;
+    }
+
+    #odd-part > .part-img-container {
+        width: 80%;
+        height: 400px;
+        padding-top: 14px;
+    }
+
+    #even-part > .part-img-container {
+        width: 80%;
+        height: 400px;
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+} 
+
+/* Default settings */
+@media screen and (min-width: 1020px) {
+    @import url('style.css');
+}

@@ -11,6 +11,7 @@
 
         <!-- Links to CSS -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/response.css">
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,21 +35,29 @@
 
     <body>
         <!-- Header -->
-        <header>
+        <header id="header">
             <!-- div with the clock icon-->
-            <div id="logo">
+            <div id="logo" onclick="scrollToTop()">
                 <img src="icons/digital-clock-icon2.png" alt="Clock-Image">
                 <p id="time">12:24</p>
             </div>
 
+            <!-- Hamburger Menu Animation -->
+            <input id="menu-toggle" type="checkbox" onclick="openMenu()"/>
+
+            <!-- Ham Menu Icon -->
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+
             <!-- Navigation menu -->
             <nav>
-                <ul>
-                    <li><a href="#logo">DOMŮ</a></li>
-                    <li><a href="#model-container">MODEL</a></li>
-                    <li><a href="#ec-container">SCHÉMA</a></li>
-                    <li><a href="#individual-parts-container">SOUČÁSTKY</a></li>
-                    <li id="references"><a href="#footer">ODKAZY</a></li>
+                <ul class="menu">
+                    <li><a href="#header" onclick="closeMenu()">DOMŮ</a></li>
+                    <li><a href="#model-container" onclick="closeMenu()">MODEL</a></li>
+                    <li><a href="#ec-container" onclick="closeMenu()">SCHÉMA</a></li>
+                    <li><a href="#individual-parts-container" onclick="closeMenu()">SOUČÁSTKY</a></li>
+                    <li id="references"><a href="#footer" onclick="closeMenu()">ODKAZY</a></li>
                 </ul>
             </nav>
 
@@ -103,7 +112,7 @@
                 <h2>Součástky</h2>
 
                 <!-- Article - Arduino UNO R3 -->
-                <article class="part-container">
+                <article class="part-container" id="odd-part">
                     <div class="part-description-container">
                         <h3>Arduino UNO R3</h3>
                         <p>Mikrokontrolér Arduino Uno R3 je klíčovým prvkem tohoto projektu, sloužícím jako základní deska a zároveň CPU. 
@@ -116,7 +125,7 @@
                 </article>
 
                 <!-- Article - 7-Segment LED Display  -->
-                <article class="part-container">
+                <article class="part-container" id="even-part">
                     <div class="part-img-container">
                         <img src="img/led-displej.jpg">
                     </div>
@@ -128,7 +137,7 @@
                 </article>
 
                 <!-- Article - "Nepájivé pole"  -->
-                <article class="part-container">
+                <article class="part-container" id="odd-part">
                     <div class="part-description-container">
                         <h3>Nepájivé Pole</h3>
                         <p>Používáme pro propojení LED displeje s arduinem pomocí kabelů. Používáme také pro práci s LED displejem pomocí arduina. 
@@ -140,7 +149,7 @@
                 </article>
 
                 <!-- Article - Male-Male Cables  -->
-                <article class="part-container">
+                <article class="part-container" id="even-part">
                     <div class="part-img-container">
                         <img src="img/cables.jpg">
                     </div>
