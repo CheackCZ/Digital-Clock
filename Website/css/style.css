@@ -358,6 +358,8 @@ header {
 
         align-items: center;
 
+        text-align: center;
+
         width: 50%;
         padding: 30px;
     }

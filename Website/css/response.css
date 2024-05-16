@@ -1,4 +1,20 @@
 @media screen and (min-width: 320px) and (max-width: 720px) {
+    /* h2 */
+    h2 {
+        font-size: 40px;
+
+        justify-content: center;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        width: 72%;
+
+        margin-left: 14%;
+        margin-right: 14%;
+    }
+
+    /* Footer */
     footer {
         flex-direction: column;
 
@@ -34,12 +50,15 @@
 
         gap: 5px;
     }
+    #policies-container > a {
+        margin: 0;
+    }
 }
 
 @media screen and (min-width: 320px) and (max-width: 925px) {
-    /* Hamburger menu */
+ /* Hamburger menu */
     /* Nav */
-     nav {
+    nav {
         display: none;
 
         flex-direction: column;
@@ -60,14 +79,14 @@
 
         top: 0;
 
-        margin-top: 100px;
+        margin-top: 80px;
 
         gap: 0;
     }
 
     nav > ul > li {
-        width: 68%;
-        
+        width: 72%;
+
         padding: 10px 20px;
 
         overflow: hidden;
@@ -80,11 +99,6 @@
         justify-content: center;
 
         text-align: center;
-    }
-
-    /* Hamburger menu */
-    .menu-button-container {
-        display: flex;
     }
 
     /* Billboard */
@@ -138,10 +152,32 @@
     }
 }
 
+@media screen and (min-width: 580px) and (max-width: 925px) {
+    .menu-button-container {
+        display: flex;
+    
+        width: 32%;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 580px) {
+    /* Hamburger menu */
+    .menu-button-container {
+        display: flex;
+    
+        width: 23%;
+    }
+}
+
 @media screen and (min-width: 320px) and (max-width: 1019px) {
     /* Section with individual parts */
+    #individual-parts-container {
+        padding-bottom: 80px;
+    }
     .part-container {
         height: 100%;
+
+        margin-top: 80px;
 
         flex-direction: column;
     }
@@ -149,19 +185,25 @@
         width: 80%;
         padding-bottom: 0;
     }
+    .part-img-container > img {
+        height: fit-content;
+        width: 100%;
+
+        object-fit: scale-down;
+    }
     #even-part > .part-description-container {
         padding-bottom: 30px;
     }
 
     #odd-part > .part-img-container {
         width: 80%;
-        height: 400px;
+        height: fit-content;
         padding-top: 14px;
     }
 
     #even-part > .part-img-container {
         width: 80%;
-        height: 400px;
+        height: fit-content;
         padding-top: 30px;
         padding-bottom: 0;
     }

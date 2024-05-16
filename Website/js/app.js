@@ -76,7 +76,7 @@ window.addEventListener('scroll', function() {
 
     var menuIcon = document.querySelector('.menu-button-container');
 
-    const mediaQuery = "(min-width: 364px) and (max-width: 925px)";
+    const mediaQuery = "(min-width: 320px) and (max-width: 925px)";
 
     if (window.scrollY >= 570) {
 
