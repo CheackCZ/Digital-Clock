@@ -1,4 +1,4 @@
-@media screen and (min-width: 364px) and (max-width: 720px) {
+@media screen and (min-width: 320px) and (max-width: 720px) {
     footer {
         flex-direction: column;
 
@@ -36,11 +36,11 @@
     }
 }
 
-@media screen and (min-width: 364px) and (max-width: 925px) {
+@media screen and (min-width: 320px) and (max-width: 925px) {
     /* Hamburger menu */
     /* Nav */
      nav {
-        display: flex;
+        display: none;
 
         flex-direction: column;
 
@@ -138,7 +138,7 @@
     }
 }
 
-@media screen and (min-width: 364px) and (max-width: 1019px) {
+@media screen and (min-width: 320px) and (max-width: 1019px) {
     /* Section with individual parts */
     .part-container {
         height: 100%;

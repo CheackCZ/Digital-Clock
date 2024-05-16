@@ -40,6 +40,27 @@ function openMenu() {
     isOpened = true;
 }
 
+
+/* Method controlling the width of the screen */
+function checkWidthAndDisplayNav() {
+    // Check if the viewport width is equal to or greater than 925 pixels
+    if (window.innerWidth >= 925) {
+        nav.style.display = 'flex'; // Display the navigation
+    } else {
+        nav.style.display = 'none'; // Hide the navigation
+    }
+}
+
+// Add event listener for resize event
+window.addEventListener('resize', function() {
+    // Call the function to check width and update navigation display
+    checkWidthAndDisplayNav();
+});
+
+// Call the function initially to set navigation display based on initial width
+checkWidthAndDisplayNav();
+
+
 /* Scrolling animation */
 function scrollToTop() {
   window.scrollTo({
