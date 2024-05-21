@@ -59,14 +59,15 @@ header {
         color: #B91818;
 
         font-size: 1.8em;
-        font-family: "Digital";
 
         cursor: pointer; 
+
+        font-family: "Digital", sans-serif;
     }
     /* Digital font for the time in logo */
     @font-face {
         font-family: "Digital";
-        src: url("/fonts/digital-7/digital-7.ttf");
+        src: url("/fonts/digital-7/digital-7.ttf") format("truetype");
     }
 
     /* Nav */
@@ -219,7 +220,7 @@ header {
     }
 
     /* References = last ul item */
-    ul > #documentation {
+    #documentation {
         padding: 10px 20px;
         background-color: #DA0000;
     }
