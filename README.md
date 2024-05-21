@@ -16,4 +16,6 @@ elektroniky, programování a designu, což ho činí zajímavým a užitečným
 - Ve složce "CODE" najdete soubor s koncovkou .ino, kde se nachází všechen kód potřebný k funkci hodin.
 - "Dokumentace" obsahuje dokumentaci a informace k celému projektu.
 - "Kryt na hodiny a Elektrický obvod" jsou modely udělané v TinkerCADU pro zobrazení elektrického obvodu a pro 3D tisk krytu na hodiny.
-- "Poster.svg" je oficiální plakát k tomuto projektu. 
+- "Poster.svg" je oficiální plakát k tomuto projektu.
+
+  Odkaz na web digitálních hodin: [http://ondrejfaltin.cz/Projects/Digital-Clock/]
