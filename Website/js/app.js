@@ -1,67 +1,64 @@
-/* Function setting the time in clock logo to the current time */
+/* Function that sets the time in the logo to the current time */
 function updateClock() {
-    // Create a new Date object
     var now = new Date();
     
     // Format the time as HH:MM:SS
     var time = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
     
-    // Update the clock display
     document.getElementById('time').textContent = time;
 }
-// Call updateClock function every second
-setInterval(updateClock, 1000);
-// Initial call to display the time immediately
-updateClock();
 
+    // Call updateClock function every second
+    setInterval(updateClock, 1000);
+
+    updateClock();
+
+
+/* Constants with the smaller display width parameters */
+const mediaQuery = "(min-width: 320px) and (max-width: 925px)";
+const mediaQueryS = "(min-width: 320px) and (max-width: 460px)";
 
 var isOpened = false;
+
 var nav = document.querySelector('nav');
 
-//Animation, closing the hamburger menu when item is selected
+/* Function, that closes the hamburger menu and uses animation defined in style.css */
 function closeMenu() {
-    document.getElementById('menu-toggle').checked = false;
+    if (window.matchMedia(mediaQuery).matches) {
+        document.getElementById('menu-toggle').checked = false;
 
-    nav.style.display = 'none';
-
-    isOpened = false;
+        nav.classList.remove('active');
+        nav.classList.add('closing');
+        
+        nav.addEventListener('animationend', function handleAnimationEnd() {
+            nav.style.display = 'none';
+            nav.classList.remove('closing');
+            nav.removeEventListener('animationend', handleAnimationEnd);
+        });
+        isOpened = false;
+    }
 }
 
+/* Function, that opens the hamburger menu and uses animation defined in style.css */
 function openMenu() {
     if (isOpened) {
-        closeMenu();
-        isOpened = false;
-        return;
-    }
-    document.getElementById('menu-toggle').checked = true;
+       closeMenu();
+       isOpened = false;
+       return;
+   }
+   document.getElementById('menu-toggle').checked = true;
+   
+   nav.style.display = 'flex';
 
-    nav.style.display = 'flex';
-
-    isOpened = true;
+   if (window.matchMedia(mediaQuery).matches) {
+       nav.classList.add('active');
+   }
+   
+   isOpened = true;
 }
 
 
-/* Method controlling the width of the screen */
-function checkWidthAndDisplayNav() {
-    // Check if the viewport width is equal to or greater than 925 pixels
-    if (window.innerWidth >= 925) {
-        nav.style.display = 'flex'; // Display the navigation
-    } else {
-        nav.style.display = 'none'; // Hide the navigation
-    }
-}
-
-// Add event listener for resize event
-window.addEventListener('resize', function() {
-    // Call the function to check width and update navigation display
-    checkWidthAndDisplayNav();
-});
-
-// Call the function initially to set navigation display based on initial width
-checkWidthAndDisplayNav();
-
-
-/* Scrolling animation */
+/* Scrolling animation uses when clicked on the logo */
 function scrollToTop() {
   window.scrollTo({
       top: 0,
@@ -75,21 +72,58 @@ window.addEventListener('scroll', function() {
     var nav = document.querySelector('nav');
 
     var menuIcon = document.querySelector('.menu-button-container');
+    var ul = this.document.getElementsByClassName('menu')[0];
 
-    const mediaQuery = "(min-width: 320px) and (max-width: 925px)";
+    var first = document.getElementById('first-reference');
+
 
     if (window.scrollY >= 570) {
-
         if (window.matchMedia(mediaQuery).matches) {
             logo.classList.add('top-bg');
             menuIcon.classList.add('top-bg');
+            if (window.matchMedia(mediaQueryS).matches) {
+                ul.style.marginTop = '90px';
+                ul.style.width = '80%';
+                first.style.paddingTop = '30px';    
+            } else {
+                ul.style.marginTop = '100px';
+                first.style.paddingTop = '20px';
+                ul.style.width = '90%';
+            }
         } else {
             logo.classList.add('top-bg');
             nav.classList.add('top-bg');
+
+            ul.style.marginTop = '0';
+            first.style.paddingTop = '0';
         }
     } else {
         logo.classList.remove('top-bg');
         menuIcon.classList.remove('top-bg');
+        
         nav.classList.remove('top-bg');
+        if (window.matchMedia(mediaQuery).matches) {
+            ul.style.marginTop = '80px';
+    
+            first.style.paddingTop = '10px';
+        } else {
+            ul.style.marginTop = '0';
+            first.style.paddingTop = '0';
+        }
     }
 });
+
+/* Function that downloads the documentation, when clicked on. */
+function downloadFile() {
+    closeMenu();
+
+    const link = document.createElement('a');
+    link.href = 'docs/Documentation.docx';  
+    link.download = 'Documentation.docx';  
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+}

@@ -1,3 +1,8 @@
+/* HTML */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Body */
 body {
     box-sizing: border-box;
@@ -112,6 +117,37 @@ header {
     nav > ul > li > a:hover {
         color: #DA0000;
     }
+    /* Specified styles for opening and closing animation at hamburger menu */
+    /* Define the animation for opening the nav */
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+        } to {
+            opacity: 1;
+        }
+    }
+
+    /* Define the animation for closing the nav */
+    @keyframes slideOut {
+        from {
+            opacity: 1;
+        } to {
+            opacity: 0;
+        }
+    }
+
+    /* When the nav is active (visible) */
+    nav.active {
+        display: flex;
+        animation: slideIn 0.5s forwards;
+    }
+
+    /* Adding transition to smoothly hide the nav */
+    nav.closing {
+        animation: slideOut 0.5s forwards;
+    }
+
+
     /* Special class used on specified axis*/
     .top-bg {
         background-color: rgba(0, 0, 0, 1); /* Semi-transparent black (adjust alpha as needed) */
@@ -183,15 +219,15 @@ header {
     }
 
     /* References = last ul item */
-    ul > #references {
+    ul > #documentation {
         padding: 10px 20px;
         background-color: #DA0000;
     }
-    ul > #references:hover {
+    ul > #documentation:hover {
         background-color: white;
         color: #DA0000;
     }
-    ul > #references:hover > a {
+    ul > #documentation:hover > a {
         color: #DA0000;
     }
 

@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Favicon (!Není červená ikona) -->
+        <!-- Favicon -->
         <link rel="shortcut icon" href="icons/digital-clock-icon2.svg" type="image/x-icon"> 
 
         <!-- Links to CSS -->
@@ -53,11 +53,11 @@
             <!-- Navigation menu -->
             <nav>
                 <ul class="menu">
-                    <li><a href="#header" onclick="closeMenu()">DOMŮ</a></li>
+                    <li id="first-reference"><a href="#header" onclick="closeMenu()">DOMŮ</a></li>
                     <li><a href="#model-container" onclick="closeMenu()">MODEL</a></li>
                     <li><a href="#ec-container" onclick="closeMenu()">SCHÉMA</a></li>
                     <li><a href="#individual-parts-container" onclick="closeMenu()">SOUČÁSTKY</a></li>
-                    <li id="references"><a href="#footer" onclick="closeMenu()">ODKAZY</a></li>
+                    <li id="documentation"><a href="#" onclick="downloadFile()">DOKUMENTACE</a></li>
                 </ul>
             </nav>
 
