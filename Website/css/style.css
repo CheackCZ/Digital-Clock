@@ -67,7 +67,7 @@ header {
     /* Digital font for the time in logo */
     @font-face {
         font-family: "Digital";
-        src: url("/fonts/digital-7/digital-7.ttf") format("truetype");
+        src: url("../fonts/digital-7/digital-7.ttf") format("truetype");
     }
 
     /* Nav */
@@ -486,9 +486,14 @@ footer {
         padding-bottom: 16px;
     }
     /* div with references */
+    #references-container {
+        display: flex;
+        flex-wrap: nowrap;
+    }
     #references-container > a {
         text-decoration: none;
     }
     #policies-container > a {
         margin-left: 12px;
+        text-align: center;
     }

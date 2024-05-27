@@ -15,7 +15,7 @@ function updateClock() {
 
 
 /* Constants with the smaller display width parameters */
-const mediaQuery = "(min-width: 320px) and (max-width: 925px)";
+const mediaQuery = "(min-width: 320px) and (max-width: 990px)";
 const mediaQueryS = "(min-width: 320px) and (max-width: 460px)";
 
 var isOpened = false;
