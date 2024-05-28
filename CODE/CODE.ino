@@ -49,7 +49,7 @@
   /**
   * @brief Time input in "HH:MM" format.
   */
-  String time = "23:58";
+  String time = "17:43";
 
   /**
   * @brief Variables for storing hours and minutes.
